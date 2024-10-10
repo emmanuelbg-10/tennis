@@ -64,3 +64,16 @@ test('Crear un jugador con fecha de nacimiento incorrecta', () => {
   const player1 = new Player('Serena', 12, 'female', '33/14/2000')
   expect(player1.birthday).toEqual(new Date(2001, 2, 5))
 })
+
+test('Se muestra con el metodo getBirthday, la fecha en formato d/m/Y', () => {
+  const player1 = new Player('Serena', 12, 'female', '4/8/97')
+  expect(player1.getBirthday()).toBe('04/08/1997')
+})
+
+test('Se crea un jugador con fecha y muestra su edad correctamente', () => {
+  const player1 = new Player('Pedro', 27, 'male', '8/10/90')
+  expect(player1.age).toBe(34)
+
+  const player2 = new Player('Emmanuel', 50, 'male', '10/2/2005')
+  expect(player2.age).toBe(19)
+})

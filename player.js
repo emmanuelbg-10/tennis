@@ -14,6 +14,21 @@ class Player {
   }
 
   get genre () { return this.#genre }
+
+  getBirthday () {
+    return new Intl.DateTimeFormat('es-ES', {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric'
+    }).format(this.birthday)
+  }
+
+  get age () {
+    const now = new Date()
+    let diff = now.getFullYear() - this.birthday.getFullYear()
+    if (now.getMonth() < this.birthday.getMonth) diff--
+    return diff--
+  }
 }
 
 module.exports = Player
