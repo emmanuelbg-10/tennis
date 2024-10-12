@@ -26,8 +26,15 @@ class Player {
   get age () {
     const now = new Date()
     let diff = now.getFullYear() - this.birthday.getFullYear()
-    if (now.getMonth() < this.birthday.getMonth) diff--
+    if (now.getMonth() < this.birthday.getMonth()) diff--
     return diff--
+  }
+
+  get category () {
+    if (this.age < 12) return 'Benjamin'
+    else if (this.age === 12 || this.age <= 15) return 'Cadet'
+    else if (this.age === 16 || this.age <= 19) return 'Junior'
+    else return 'Senior'
   }
 }
 

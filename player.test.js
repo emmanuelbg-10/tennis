@@ -55,7 +55,7 @@ test('Crear un jugador con fecha de nacimiento', () => {
   expect(player1.birthday).toEqual(new Date(1997, 7, 4))
 })
 
-test('Crear un jugador sin fecha de nacimiento, debe poner 1/1/200', () => {
+test('Crear un jugador sin fecha de nacimiento, debe poner 1/1/2000', () => {
   const player1 = new Player('Serena', 12, 'female')
   expect(player1.birthday).toEqual(new Date(2000, 0, 1))
 })
@@ -74,6 +74,45 @@ test('Se crea un jugador con fecha y muestra su edad correctamente', () => {
   const player1 = new Player('Pedro', 27, 'male', '8/10/90')
   expect(player1.age).toBe(34)
 
-  const player2 = new Player('Emmanuel', 50, 'male', '10/2/2005')
+  const player2 = new Player('Emmanuel', 50, 'male', '10/02/2005')
   expect(player2.age).toBe(19)
+
+  const player3 = new Player('Alejandra', 50, 'male', '18/11/2005')
+  expect(player3.age).toBe(18)
+})
+
+test('Se crea un jugador y se muestra su categoria correctamente', () => {
+  const player1 = new Player('Pedro', 27, 'male', '8/10/90')
+  expect(player1.age).toBe(34)
+  expect(player1.category).toBe('Senior')
+
+  const player2 = new Player('Emmanuel', 50, 'male', '10/02/2005')
+  expect(player2.age).toBe(19)
+  expect(player2.category).toBe('Junior')
+
+  const player3 = new Player('Maria', 37, 'female', '30/04/2011')
+  expect(player3.age).toBe(13)
+  expect(player3.category).toBe('Cadet')
+
+  const player4 = new Player('Yeray', 20, 'male', '30/04/2013')
+  expect(player4.age).toBe(11)
+  expect(player4.category).toBe('Benjamin')
+})
+
+test('Se crea un jugador y se muestra su categoria correctamente', () => {
+  const player1 = new Player('Pedro', 27, 'male', '8/10/90')
+  expect(player1.age).toBe(34)
+  expect(player1.category).toBe('Senior')
+
+  const player2 = new Player('Emmanuel', 50, 'male', '10/02/2005')
+  expect(player2.age).toBe(19)
+  expect(player2.category).toBe('Junior')
+
+  const player3 = new Player('Maria', 37, 'female', '30/04/2011')
+  expect(player3.age).toBe(13)
+  expect(player3.category).toBe('Cadet')
+
+  const player4 = new Player('Yeray', 20, 'male', '30/04/2013')
+  expect(player4.age).toBe(11)
+  expect(player4.category).toBe('Benjamin')
 })
